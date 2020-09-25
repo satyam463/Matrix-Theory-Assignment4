@@ -67,9 +67,6 @@ for i, txt in enumerate(vert_labels):
                  xytext=(0,10), # distance from text to points (x,y)
                  ha='center') # horizontal alignment can be left, right or center
 
-#Plotting all lines
-#plt.plot(x_AB[0,:],x_AB[1,:],label='Tangent')
-
 #Plotting the actual parabola
 #plt.plot(xStandardparab[0,:],xStandardparab[1,:],label='Parabola',color='r')
 plt.plot(xActualparab[0,:],xActualparab[1,:],label='Parabola',color='r')
