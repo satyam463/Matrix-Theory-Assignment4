@@ -55,9 +55,9 @@ c = c.flatten()
 print(c,-5/3,1/4,foc)
 c1 = np.array(([(u@V@u-2*D_vec[1]*u@u+D_vec[1]**2*f)/(eta*D_vec[1]**2),0]))
 xStandardparab = np.vstack((x,y))
-#xActualparab = P@(xStandardparab - c1[:,np.newaxis])-u[:,np.newaxis]/D_vec[1]
+xActualparab = P@(xStandardparab - c1[:,np.newaxis])-u[:,np.newaxis]/D_vec[1]
 xActualparab = P@xStandardparab + c[:,np.newaxis]
-#xActualparab = P@xStandardparab
+xstandardparab = P@xStandardparab + O[:,np.newaxis]
 
 #Labeling the coordinates
 parab_coords = np.vstack((O,c)).T
@@ -71,8 +71,8 @@ for i, txt in enumerate(vert_labels):
                  ha='center') # horizontal alignment can be left, right or center
 
 #Plotting the actual parabola
-#plt.plot(xStandardparab[0,:],xStandardparab[1,:],label='Parabola',color='r')
-plt.plot(xActualparab[0,:],xActualparab[1,:],label='Parabola',color='r')
+plt.plot(xStandardparab[0,:],xStandardparab[1,:],label='Parabola',color='r')
+plt.plot(xActualparab[0,:],xActualparab[1,:],label='Parabola rotated',color='b')
 
 plt.xlabel('$x$')
 plt.ylabel('$y$')
