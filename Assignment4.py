@@ -32,6 +32,9 @@ O = np.array(([0,0]))
 #Eigenvalues and eigenvectors
 D_vec,P = LA.eig(V)
 D = np.diag(D_vec)
+pcos = np.cos(np.pi/4)
+psin = np.sin(np.pi/4)
+P = np.array(([pcos,-psin],[psin,pcos]))
 p = P[:,0]
 eta = 2*u@p
 #foc = np.abs(eta/D_vec[1])
